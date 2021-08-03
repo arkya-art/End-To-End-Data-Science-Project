@@ -40,3 +40,31 @@ output : Calculated Absenteeism in hours of employees
    ### Folder Structure
    * Jupyter Notebook -> Data Preprocessing & Machine Learning 
    * Model Snapshots -> model & scaler weights
+
+## MySQL Database
+
+Created python module for automating the process of data cleaning and prediction
+   #### Python Module structure 
+   Consist of entire data preprocessing and prediction part for new test data
+   - Class CustomScaler (fit & tranformed for scaling new test data)
+   - Class Absenteeism model (loaded dataset for same preprocessing techniques as for train data, predicted the absenteeism in hours)
+   [Python module](https://github.com/arkya-art/End-To-End-Data-Science-Project/blob/master/Integration/absenteeism_module.py)
+
+   #### Integration
+   * Loaded the python module and created the instance for model weights. Passed the new test data to the python module and got the predictions
+
+   * Imported pymysql library to connect python with the MySql database
+   * Created database outline structure within the mysql workbench for  different features with its datatype. 
+   [MySQL Database schemas]()
+
+   * Executed all the SQL - INSERT INTO statements to insert all the predicted values by python module to database by FOR loop
+
+   [Python, SQL Integration](https://github.com/arkya-art/End-To-End-Data-Science-Project/tree/master/Integration)
+
+## Tableau Visualization
+
+Connected the MySql database with the Tableau and extracted out the stored database to Tableau workbench. Plotted three important visualizations
+* Age vs Probability
+* Reasons vs Probability
+* Transportation Expense vs Probability
+[Tableau Public Visualization](https://public.tableau.com/app/profile/arkya.bagchi/viz/AbsenteeismDashboard_16266017314520/Dashboard1)
